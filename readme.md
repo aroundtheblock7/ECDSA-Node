@@ -29,7 +29,12 @@ To run the scripts and create accounts we do….
 ```cd server```
 ```node scripts/generate.js```  
 
-Run ```node scripts/generate.js``` 3 times to create accounts (public + private keys)
+Run ```node scripts/generate.js``` 3 times to create accounts (public + private keys)The Ethereum 
+Note the Ethereum Cryptography library is used here to generate private key. 
+The following modules are used in the generate.js file to assist with priv key generation along with installing the modules...
+```const secp = require("ethereum-cryptography/secp256k1");```
+```const { toHex, utf8ToBytes } = require("ethereum-cryptography/utils");```
+```const { keccak256 } = require("ethereum-cryptography/keccak");```
 
 Now open the index.js and enter the public keys (as strings" into the balances object which will map up the each account to the balances of 100, 50, 75 respectively.
 
